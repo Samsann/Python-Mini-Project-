@@ -1,14 +1,34 @@
 import random
-print()
+
 print("\t\tWelcome to Kaun Banega Crorepati")
-a=input("\t   Enter Player Name -")
-print("\n\t\tTo",a, "Chaliye Shuru Karte Hain\n")
-questions=["nagpur is famous for","Where is the only diamond crossing in India located","YCCE is also known as","India's first textile mill is located in which city","Geographical center of India"]
-answer=["Oranges","Nagpur","IIT Wanadongri","Nagpur","Nagpur"]
-Wronganswers=[["Mangoes","Grapes","Apples"],["Wardha","Pune","Mumbai"],["NIT Wanadongri","IIIT Wanadongri"],["Pune","Wardha","Mumbai"],["Wardha","Pune","Mumbai"]]
-attempt=[]
-count=1
-money=0
+a = input("\t   Enter Player Name - ")
+print("\n\t\tTo", a, "Chaliye Shuru Karte Hain\n")
+
+questions = [
+    "Nagpur is famous for",
+    "Where is the only diamond crossing in India located",
+    "YCCE is also known as",
+    "India's first textile mill is located in which city",
+    "Geographical center of India"
+]
+answers = [
+    "Oranges",
+    "Nagpur",
+    "IIT Wanadongri",
+    "Nagpur",
+    "Nagpur"
+]
+wrong_answers = [
+    ["Mangoes", "Grapes", "Apples"],
+    ["Wardha", "Pune", "Mumbai"],
+    ["NIT Wanadongri", "IIIT Wanadongri"],
+    ["Pune", "Wardha", "Mumbai"],
+    ["Wardha", "Pune", "Mumbai"]
+]
+
+attempt = []
+count = 1
+money = 0
 while True:
     while True:
         sel=random.choice(questions)
@@ -17,13 +37,13 @@ while True:
         elif sel not in attempt:
             attempt.append(sel) 
             questionindex=questions.index(sel)
-            correctanswer=answer[questionindex]
+            correctanswer=answers[questionindex]
             break
         options=[]
         option1=[]
         optioncount=1
         while optioncount<4:
-            optionsel=random.choice(Wronganswers[questionindex])
+            optionsel=random.choice(wrong_answers[questionindex])
             if optionsel in option1:
                 pass
             elif optionsel not in option1:
